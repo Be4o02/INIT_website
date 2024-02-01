@@ -1,0 +1,32 @@
+.missia_init{
+        text-align: center;
+        font-family: "Spartan";
+        font-size: 32px;
+        
+        position: relative;
+        margin-top: 100px;
+        left: calc(50% - 500px);
+        top: calc(50% - 2294px);
+        width: 1000px;
+        height: 250px;
+        color: rgb(255, 255, 255);
+    
+}
+.missia_init_glava{
+    font-size: 64px;
+    font-weight: 400;
+    position: relative;
+    bottom: 20px;
+     
+}
+
+.istori_init_glava{
+    font-size: 64px;
+    font-weight: 400;
+    position: relative;
+    color: white;
+    left: calc(50% - 200px);
+    margin-top: 200px;
+        
+    
+}
