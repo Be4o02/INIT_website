@@ -1,41 +1,26 @@
-/* INTRO SECTION
-–––––––––––––––––––––––––––––––––––––––––––––––––– */
 
-body{
-    background: linear-gradient(
-    180deg,
-    rgba(3, 8, 64, 1) 5.499999970197678%,
-    rgba(180, 179, 210, 1) 84.50000286102295%
-  );
-  margin: 0;
-  padding: 0;
-  max-width: 1329px;
-}
-.intro {
-    background: #1C1A46;
-    padding: 10px 0;
-  }
-  
-  .container {
-    width: 90%;
-    max-width: 1200px;
-    margin: 0 auto;
-    text-align: center;
-  }
-
-  /*общий блок интро*/
-  .intro_div{
-    margin-top: 100px;
-  }
-  
-  
    /* картинка на разработке
   –––––––––––––––––––––––––––––––––––––––––––––––––– */
-  .d_1945 img{
-    width: 400px;
+  .left_div img{
+    width: 300px;
+    height: 300px;
     position: relative;
     
   }
+.left_div{
+  width: 300px;
+  height: 300px;
+}
+
+.right_div{
+  width: 300px;
+  height: 300px;
+  position: relative;
+  margin-top: -350px;
+}
+.right_div img{
+width: 300px;height: 300px;
+}
   
   
   /* TIMELINE
@@ -50,11 +35,12 @@ body{
 
   .timeline ul li {
     position: relative;
-    list-style-type: none;
+    list-style-type:none;
     width: 6px;
     margin: 0 auto;
     padding-top: 50px;
     background: #fff;
+    
   }
   
   /*точка------------------------------------------------ */
@@ -79,11 +65,27 @@ body{
     color: #fff;
   }
   /*Год размер здесь менять-----------------------------*/
-  time {
+
+  .left_div time {
     display: block;
-    font-size: 4.2rem; 
+    font-size: 2.0rem; 
     font-weight: bold;
-    margin-bottom: 8px;
+    color: white;
+    position: relative;
+    margin-bottom: 20px;
+     left: -92px;
+     top: -80px;
+     color: red;
+  }.right_div time {
+    display: block;
+    font-size: 2.0rem; 
+    font-weight: bold;
+    color: white;
+    position: relative;
+    margin-bottom: 20px;
+     right: -392px;
+     top: -50px;
+     color: red;
   }
   
   
@@ -145,89 +147,4 @@ body{
   }
   
   
-  /* GENERAL MEDIA QUERIES пока не понятно
-  –––––––––––––––––––––––––––––––––––––––––––––––––– 
   
-  @media screen and (max-width: 900px) {
-   
-    .timeline ul li:nth-child(even) div {
-      left: -289px;
-      /*250+45-6
-    }
-  }
-  
-  @media screen and (max-width: 600px) {
-    .timeline ul li {
-      margin-left: 20px;
-    }
-    .timeline ul li div {
-      width: calc(100vw - 91px);
-    }
-    .timeline ul li:nth-child(even) div {
-      left: 45px;
-    }
-}
-
-  */
-  
-  /* EXTRA/CLIP PATH STYLES пока не понятно
-  –––––––––––––––––––––––––––––––––––––––––––––––––– 
- 
-  .timeline-clippy ul li::after {
-    width: 40px;
-    height: 40px;
-    border-radius: 50;
-  }
-/*
-  .timeline-rhombus ul li::after {
-    clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);
-  }
-  
-  .timeline-rhombus ul li div::before {
-    bottom: 12px;
-  }
-  
-  .timeline-star ul li::after {
-    clip-path: polygon(
-      0% 0%,
-      61% 35%,
-      98% 35%,
-      68% 57%,
-      79% 91%,
-      50% 70%,
-      21% 91%,
-      32% 57%,
-      2% 35%,
-      39% 35%
-    );
-  }
-  
-  .timeline-heptagon ul li::after {
-    clip-path: polygon(
-      0% 0%,
-      90% 20%,
-      100% 60%,
-      75% 100%,
-      25% 100%,
-      0% 60%,
-      10% 20%
-    );
-  }
-  
-  
-  .timeline-infinite ul li::after {
-    animation: scaleAnimation 2s infinite;
-  }
-  
-  @keyframes scaleAnimation {
-    0% {
-      transform: translateX(-50%) scale(1);
-    }
-    50% {
-      transform: translateX(-50%) scale(1.25);
-    }
-    100% {
-      transform: translateX(-50%) scale(1);
-    }
-                           }
-                           */

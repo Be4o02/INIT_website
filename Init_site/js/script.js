@@ -30,3 +30,20 @@
     window.addEventListener("resize", callbackFunc);
     window.addEventListener("scroll", callbackFunc);
   })();
+
+
+
+
+/*скрулл лого*/
+  let bg = document.getElementById("init_logo");
+  let minSize = 70;
+
+  window.addEventListener("scroll", function(){
+    let newSize = minSize - window.pageYOffset / 100;
+    if (newSize < minSize) {
+      newSize = minSize;
+    }
+
+    bg.style.width = newSize + "px";
+    bg.style.height = newSize + "px";
+  });

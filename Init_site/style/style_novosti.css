@@ -1,0 +1,241 @@
+@import url('https://fonts.googleapis.com/css2?family=League+Spartan:wght@400;600&family=Poppins:wght@300&display=swap');
+
+/* Теперь вы можете использовать шрифты в вашем CSS */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    /* font-family: 'League Spartan', sans-serif; */
+    
+}
+
+
+body{
+   
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+  
+}
+
+
+.header {
+    background: #1C1A46;
+    width: 100%;
+    z-index: 1000; /* Установите z-index, чтобы заголовок оставался выше других элементов */
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+
+.menu {
+    display: flex;
+    width: 100%;
+    height: 108px;
+    gap: 60px;
+    align-items: center;
+    position: relative;
+    list-style: none;
+    justify-content: space-between;
+}
+
+.menu li a {
+    color: #fff;
+    font-family: 'League Spartan', sans-serif;
+    
+
+}
+
+.logo {
+    
+    width: 130px;
+    position: absolute;
+    top: 20px;
+    transform: translate(-50%);
+    transition: width 1.5s, height 1.5s; /* Добавляем плавность для свойств width и height */
+}
+
+.avn a {
+    background: #3F3E79;
+    padding: 8px 19px;
+    border-radius: 6px;
+    
+}
+/*стиль три кнопок-----------------------------------------*/
+.button-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 100px; /* Отступ сверху */
+}
+
+.button {
+    position: relative;
+    left: 80px;
+    width: 170px;
+    height: 80px;
+    border-radius: 5px;
+    margin-right: 150px; /* Увеличил отступ между кнопками */
+    background-color: #F0F0F0;
+    font-size: 24px;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+    color: #23206A;
+    text-align: center;
+    line-height: 80px;
+    cursor: pointer;
+    box-shadow: 3px 3px 4px rgba(0, 0, 0, 0.5);
+}
+
+.button:hover {
+    color: white;
+    background-color: #23206A;
+}
+
+.button::before {
+    content: '';
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%) rotate(45deg);
+    width: 25px;
+    height: 25px;
+    border-radius: 5px;
+    background-color: #23206A;
+    display: none;
+    
+}
+
+.button:hover::before {
+    display: block;
+    bottom: -11%; /* На половину за пределами кнопки */
+}
+
+.hidden {
+    display: none;
+}
+
+.button-container {
+    display: flex;
+  }
+
+  
+
+ 
+/*общий блок новостей*/
+  .text-block {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin: 0 160px; /* Убедитесь, что здесь указана нужная вам величина отступа */
+}
+
+  .text-block-img {
+    margin-bottom: 10px;
+    width: 290px;
+    position: relative;
+    display: flex; 
+  }
+
+/*изоброжение внутри блока*/
+  .text-block-img img {
+    width: 290px;
+    height: 370px;
+    margin-top: 100px;
+  }
+
+
+  
+.overlay {
+    position: absolute;
+    bottom: 0; /* Изменено */
+    left: 0;
+    width: 290px;
+    height: 100px; /* Изменено */
+    background-color:#1C1A46;
+    display: flex;
+    opacity: 1;
+    transition: height 0.3s ease;
+  }
+
+  .overlay:hover  {
+    height: 135px; /* Изменено */
+  }
+
+  .overlay p{
+    color: #fff;
+    font-size: 18px;
+    font-weight: bold;
+    font-family: 'League Spartan', sans-serif;
+    text-align: center;
+    margin-top: 20px;
+  }
+
+  
+
+   
+
+  
+  
+/*кнопка подробно внутри картинки новости--------*/
+.details-button {
+  background-color: #221E76;
+  color: #fff;
+  font-size: 10px;
+  cursor: pointer;
+  border: 0px;
+  border-radius: 20px;
+  padding:  4px 25px ; /* Изменил padding для красоты */
+  position: absolute;
+  bottom: 5%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  opacity: 0;
+  font-weight: bold;
+  font-family: 'League Spartan', sans-serif;
+  transition: bottom 0.3s ease;
+}
+
+
+
+  .overlay:hover .details-button {
+    opacity: 1;
+    bottom: 15%;
+  }
+/*----------------------------------------------*/
+  .text-block-img {
+    position: relative;
+    display: inline-block;
+    margin-bottom: 10px;
+    width: 290px;
+}
+
+
+.top-left-text {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 38px;
+    height: 65px;
+    color: rgb(255, 255, 255);
+    font-family: 'League Spartan', sans-serif;
+    font-size: 11px;
+    text-align: center;
+    background: #1C1A46;
+    margin-top: 100px;
+    padding-top: 10px;   
+}
+
+#text-block-2,
+#text-block-3 {
+    display: none;
+}
+
+
+
+ 
+
+/* Стили для даты, месяца и года */
+
