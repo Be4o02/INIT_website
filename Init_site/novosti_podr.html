@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Новости подробно</title>
+    <link rel="stylesheet" href="style/novosti_podrovno.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="./src/img/logo/init_logo.png">
+
+</head>
+<body>
+  <!-- #главное меню -->
+  <header class="header">
+    <div class="container">
+            <ul class="menu">
+                <li><a>О НАС <span class="menu-down"><img src="image/icon/_.png" alt=""></span></a></li>
+                <li><a>ИНСТИТУТ <span class="menu-down"><img src="image/icon/_.png" alt=""></span></a></li>
+                <li><a>СТУДЕНТАМ <span class="menu-down"><img src="image/icon/_.png" alt=""></span></a></li>
+                <a href="index.html"><img class="logo" src="image/logo/init_logo.png" alt="" id="init_logo"></a>
+                <li><a>ПОСТУПАЮЩИМ </a></li>
+                <li><a href="index_novosti.html">НОВОСТИ</a></li>
+                <li class="avn"><a>AVN</a></li>
+            </ul>
+    </div>
+</header>
+
+ <!-- Надпись новости ----------------------->
+ <div class="ogl_novosti">
+  <h1> Новости </h1>
+ </div>
+ <!-- --------------------------------- -->
+
+ 
+<div class="news-container">
+  <div class="news big-news" id="bigNews">
+    <img src="image/novostpodrovno/novosti1.png" alt="Новость 1">
+    <div class="text">
+      <h2>Тема большой новости</h2>
+      <p>Текст подробно о большой новости.</p>
+    </div>
+  </div>
+  <div class="small-news-container">
+    <div class="news small-news" onclick="swapNews('bigNews', this)">
+      <img src="image/novostpodrovno/novosti2.jpg" alt="Новость 2">
+      <div class="text">
+        <h3>Новость 2</h3>
+        <p>Краткий текст новости 2.</p>
+      </div>
+    </div>
+    <div class="news small-news" onclick="swapNews('bigNews', this)">
+      <img src="image/novostpodrovno/novosti3.png" alt="Новость 3">
+      <div class="text">
+        <h3>Новость 3</h3>
+        <p>Краткий текст новости 3.</p>
+      </div>
+    </div>
+    <div class="news small-news" onclick="swapNews('bigNews', this)">
+      <img src="image/novostpodrovno/novosti4.png" alt="Новость 4">
+      <div class="text">
+        <h3>Новость 4</h3>
+        <p>Краткий текст новости 4.</p>
+      </div>
+    </div>
+  </div>
+</div>
+    
+
+ <script>
+  function swapNews(bigNewsId, clickedNews) {
+    const bigNews = document.getElementById(bigNewsId);
+    const cloneBigNews = bigNews.cloneNode(true);
+    const clickedNewsContent = clickedNews.innerHTML;
+    
+    // Заменяем большую новость на содержимое кликнутого маленького блока
+    bigNews.innerHTML = clickedNewsContent;
+    // Заменяем кликнутый маленький блок на содержимое предыдущей большой новости
+    clickedNews.innerHTML = cloneBigNews.innerHTML;
+
+    // Изменяем размеры большого блока в зависимости от его текущего состояния
+    if (bigNews.classList.contains('big-news')) {
+      bigNews.classList.remove('big-news');
+      bigNews.style.flex = '1 1 calc(25% - 15px)'; // Возвращаем размер маленького блока
+    } else {
+      bigNews.classList.add('big-news');
+      bigNews.style.flex = '1 1 calc(70% - 20px)'; // Устанавливаем размер большого блока
+    }
+  }
+</script>
+
+</body>
+</html>

@@ -1,0 +1,129 @@
+
+@import url('https://fonts.googleapis.com/css2?family=League+Spartan:wght@400;600&family=Poppins:wght@300&display=swap');
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    /* font-family: 'League Spartan', sans-serif; */
+    font-family: 'Poppins', sans-serif;
+}
+
+
+body{
+   
+  margin: 0;
+  padding: 0;
+  
+}
+
+
+.header {
+    background: #1C1A46;
+    width: 100%;
+    
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.menu {
+    display: flex;
+    width: 100%;
+    height: 108px;
+    gap: 60px;
+    align-items: center;
+    position: relative;
+    list-style: none;
+    justify-content: space-between;
+}
+
+.menu li a {
+    color: #fff;
+    font-family: 'League Spartan', sans-serif;
+    
+
+}
+
+.logo {
+    width: 130px;
+    position: absolute;
+    top: 20px;
+    transform: translate(-50%);
+    transition: width 1.5s, height 1.5s; /* Добавляем плавность для свойств width и height */
+}
+
+.avn a {
+    background: #3F3E79;
+    padding: 8px 19px;
+    border-radius: 6px;
+}
+/*надпись новости --------------------------------------*/
+.ogl_novosti {
+    position: relative;
+    width: 100%;
+  }
+  
+  .ogl_novosti h1 {
+    text-align: center;
+    margin-top: 100px;
+    color: #3F3E79;
+    font-family: 'League Spartan', sans-serif;
+  }
+  
+  .ogl_novosti::before,
+  .ogl_novosti::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    width: 60px;
+    height: 4px;
+    background-color: #3F3E79;
+  }
+  
+  .ogl_novosti::before {
+    left: 500px;
+    transform: translateY(-50%);
+  }
+  
+  .ogl_novosti::after {
+    right: 500px;
+    transform: translateY(-50%);
+  }
+  /*----------------------------------------------------*/
+
+  .news-container{
+    margin: 100px;
+  }
+
+  /* Стили для блоков новостей */
+  .news-container {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  .news {
+    flex: 1 1 calc(25% - 15px); /* Четыре блока на ширину экрана с отступами */
+    margin: 0 20px 20px 0; /* Отступы между блоками */
+    cursor: pointer;
+  }
+  .news img {
+    max-width: 90%;
+    height: auto;
+  }
+  .big-news {
+    flex: 1 1 60%; /* Большой блок занимает 70% ширины контейнера */
+    margin-right: 20px; /* Отступ справа от большого блока */
+  }
+  .big-news img {
+    max-width: 100%;
+    height: auto;
+  }
+  .small-news-container {
+    flex: 1 1 10%; /* Маленькие блоки занимают 30% ширины контейнера */
+    display: flex;
+    flex-direction: column;
+  }
+  .small-news {
+    margin-bottom: 20px; /* Отступ снизу у маленьких блоков */
+  }
