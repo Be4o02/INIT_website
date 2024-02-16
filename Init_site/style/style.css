@@ -11,9 +11,10 @@
 
 
 body{
-    background: linear-gradient(#030840,#B4B3D2);
+background: linear-gradient(#030840,#B4B3D2);
   margin: 0;
   padding: 0;
+ overflow-x: hidden;
   
 }
 
@@ -21,8 +22,6 @@ body{
 .header {
     background: #1C1A46;
     width: 100%;
-    position: fixed;
-    z-index: 1000;
 }
 
 .container {
@@ -62,88 +61,59 @@ body{
     border-radius: 6px;
 }
 
-.missia_init{
-    text-align: center;
-        position: relative;
-        padding-top: 250px;
-        padding-bottom: 150px;
-        width: 1200px;
-        height: 250px;
-        color: rgb(255, 255, 255); 
-         
-}
-/*text missia init--------------------------------*/
-.missia_init_glava p {
-    text-align: center;
-    position: relative;
-    font-size: 44px;
-    font-family: 'League Spartan', sans-serif;
-    bottom: 24px;
-    left: 70px;
-}
-/*текст внутри миссия инит-----------------------*/
-.missia_init_text {
-    font-size: 26px;
-    text-align: center;
-padding-top: 10px;
-padding-left: 120px;
 
-}
-/*line missia init 2 */
-.line-12 {
-    border-style: solid;
-    border-color: #ffffff;
-    border-width: 5px 0 0 0;
-    width: 50px;
-    height: 0px;
-    position: relative;
-    left: 848px;
-    bottom: -5px;
-  }
 
-.line-13 {
-    border-style: solid;
-    border-color: #ffffff;
-    border-width: 5px 0 0 0;
-    width: 50px;
-    height: 0px;
-    position: relative;
-    left: 450px;
-   
-  }
-
-/*текст история инит---------------------------------*/
-.istori_init_glava p{
-    color: rgb(255, 255, 255); 
-    text-align: center;
-    font-size: 44px;
-    font-family: 'League Spartan', sans-serif;
-    margin-top: 180px;
-    position: relative;
-    
-}
-/* линии история-------------------------------------------*/
-.line-14 {
-    border-style: solid;
-    border-color: #ffffff;
-    border-width: 5px 0 0 0;
-    width: 50px;
-    height: 0px;
-    position: relative;
-    left: 848px;
-    bottom: -210px;
-  }
-
-.line-15 {
-    border-style: solid;
-    border-color: #ffffff;
-    border-width: 5px 0 0 0;
-    width: 50px;
-    height: 0px;
-    position: relative;
-    left: 450px;
-    bottom: -208px;
-   
+  
+/*----оглавление структура--------------------------------*/
+.ogl_structur {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 100px;
   }
   
+  .ogl_structura {
+    position: relative;
+    text-align: center;
+  }
+  
+  .ogl_structura::before,
+  .ogl_structura::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    width: 20%;
+    height: 4px;
+    background-color: #ffffff;
+  }
+  
+  .ogl_structura::before {
+    left: 300px; /* Примерное положение левой линии */
+    transform: translateY(-50%);
+  }
+  
+  .ogl_structura::after {
+    right: 300px; /* Примерное положение правой линии */
+    transform: translateY(-50%);
+  }
+  
+  .ogl_structura h1 {
+    color: #fff;
+     /* Чтобы заголовок находился над линиями */
+  }
+
+  .img_struct {
+    width: 100%;height: 100%;
+    margin-top: 100px;
+    display: flex;
+  justify-content: center;
+  
+  }
+  .img_struct img{
+    align-items: center;
+    width: 90%;
+    height: 90%;
+    padding-left: 20px;
+  }
+  /*----------------------------------------------------*/
 

@@ -1,18 +1,21 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Новости подробно</title>
     <link rel="stylesheet" href="style/novosti_podrovno.css">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="shortcut icon" href="./src/img/logo/init_logo.png">
-
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@400;600&family=Poppins:wght@300&display=swap">
+    <style>
+        /* Ваши стили */
+    </style>
 </head>
+
 <body>
-  <!-- #главное меню -->
-  <header class="header">
-    <div class="container">
+    <!-- #главное меню -->
+    <header class="header">
+        <div class="container">
             <ul class="menu">
                 <li><a>О НАС <span class="menu-down"><img src="image/icon/_.png" alt=""></span></a></li>
                 <li><a>ИНСТИТУТ <span class="menu-down"><img src="image/icon/_.png" alt=""></span></a></li>
@@ -22,71 +25,92 @@
                 <li><a href="index_novosti.html">НОВОСТИ</a></li>
                 <li class="avn"><a>AVN</a></li>
             </ul>
-    </div>
-</header>
+        </div>
+    </header>
 
- <!-- Надпись новости ----------------------->
- <div class="ogl_novosti">
-  <h1> Новости </h1>
- </div>
- <!-- --------------------------------- -->
+    <!-- Надпись новости ----------------------->
+    <div class="ogl_novosti">
+        <h1> Новости </h1>
+    </div>
+    <!-- --------------------------------- -->
 
- 
-<div class="news-container">
-  <div class="news big-news" id="bigNews">
-    <img src="image/novostpodrovno/novosti1.png" alt="Новость 1">
-    <div class="text">
-      <h2>Тема большой новости</h2>
-      <p>Текст подробно о большой новости.</p>
+    <div class="news-container">
+        <div class="news big-news" id="bigNews" onclick="swapText(this)">
+            <h2>новости1</h2>
+            <img src="image/novostpodrovno/novosti1.png" alt="Новость 1" class="big-image">
+            <div class="text">
+                
+                <p>Текст подробно о большой новости1</p>
+            </div>
+        </div>
+        <div class="small-news-container">
+            <div class="news small-news" onclick="swapImages(this)">
+                <img src="image/novostpodrovno/novosti2.jpg" alt="Новость 2" class="small-image">
+                <div class="text small-text">
+                    <h3>Новость 2</h3>
+                    <p>Тут будет текст новости 2.</p>
+                </div>
+            </div>
+            <div class="news small-news" onclick="swapImages(this)">
+                <img src="image/novostpodrovno/novosti3.png" alt="Новость 3" class="small-image">
+                <div class="text small-text">
+                    <h3>Новость 3</h3>
+                    <p>Тут будет текст новости 3.</p>
+                </div>
+            </div>
+            <div class="news small-news" onclick="swapImages(this)">
+                <img src="image/novostpodrovno/novosti4.png" alt="Новость 4" class="small-image">
+                <div class="text small-text">
+                    <h3>Новость 4</h3>
+                    <p>Тут будет текст новости 4.</p>
+                </div>
+            </div>
+        </div>
     </div>
-  </div>
-  <div class="small-news-container">
-    <div class="news small-news" onclick="swapNews('bigNews', this)">
-      <img src="image/novostpodrovno/novosti2.jpg" alt="Новость 2">
-      <div class="text">
-        <h3>Новость 2</h3>
-        <p>Краткий текст новости 2.</p>
-      </div>
-    </div>
-    <div class="news small-news" onclick="swapNews('bigNews', this)">
-      <img src="image/novostpodrovno/novosti3.png" alt="Новость 3">
-      <div class="text">
-        <h3>Новость 3</h3>
-        <p>Краткий текст новости 3.</p>
-      </div>
-    </div>
-    <div class="news small-news" onclick="swapNews('bigNews', this)">
-      <img src="image/novostpodrovno/novosti4.png" alt="Новость 4">
-      <div class="text">
-        <h3>Новость 4</h3>
-        <p>Краткий текст новости 4.</p>
-      </div>
-    </div>
-  </div>
-</div>
     
-
- <script>
-  function swapNews(bigNewsId, clickedNews) {
-    const bigNews = document.getElementById(bigNewsId);
-    const cloneBigNews = bigNews.cloneNode(true);
-    const clickedNewsContent = clickedNews.innerHTML;
+    <script>
+        function swapImages(clickedImage) {
+            // Получаем ссылки на большое и маленькое изображения
+            const bigImage = document.querySelector('.big-news img');
+            const smallImage = clickedImage.querySelector('img');
     
-    // Заменяем большую новость на содержимое кликнутого маленького блока
-    bigNews.innerHTML = clickedNewsContent;
-    // Заменяем кликнутый маленький блок на содержимое предыдущей большой новости
-    clickedNews.innerHTML = cloneBigNews.innerHTML;
+            // Создаем временный элемент для обмена их местами
+            const tempSrc = bigImage.src;
+            const tempWidth = bigImage.width;
+            const tempHeight = bigImage.height;
+    
+            // Обмениваем их местами
+            bigImage.src = smallImage.src;
+            bigImage.width = smallImage.width;
+            bigImage.height = smallImage.height;
+    
+            smallImage.src = tempSrc;
+            smallImage.width = tempWidth;
+            smallImage.height = tempHeight;
+    
+            // Поменять тексты заголовков
+           
+    function swapText(clickedImage) {
+        // Получаем ссылки на заголовки большого и маленького блоков новостей
+        const bigHeader = document.querySelector('.big-news h2');
+        const smallHeader = clickedImage.querySelector('.text small-text h3');
 
-    // Изменяем размеры большого блока в зависимости от его текущего состояния
-    if (bigNews.classList.contains('big-news')) {
-      bigNews.classList.remove('big-news');
-      bigNews.style.flex = '1 1 calc(25% - 15px)'; // Возвращаем размер маленького блока
-    } else {
-      bigNews.classList.add('big-news');
-      bigNews.style.flex = '1 1 calc(70% - 20px)'; // Устанавливаем размер большого блока
+        // Сохраняем текущий текст заголовка большого блока
+        const tempHeaderText = bigHeader.textContent;
+
+        // Меняем тексты заголовков
+        bigHeader.textContent = smallHeader.textContent;
+        smallHeader.textContent = tempHeaderText;
     }
-  }
+}
 </script>
 
+  
+    
+    
+   
+
+    
 </body>
+
 </html>

@@ -198,6 +198,10 @@ body{
   transition: bottom 0.3s ease;
 }
 
+.details-button a{
+  color: #fff;
+  text-decoration: none;
+}
 
 
   .overlay:hover .details-button {

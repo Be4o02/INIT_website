@@ -1,0 +1,160 @@
+
+
+@import url('https://fonts.googleapis.com/css2?family=League+Spartan:wght@400;600&family=Poppins:wght@300&display=swap');
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    /* font-family: 'League Spartan', sans-serif; */
+    font-family: 'Poppins', sans-serif;
+}
+
+
+body{
+
+  margin: 0;
+  padding: 0;
+  
+}
+
+
+.header {
+    background: #1C1A46;
+    width: 100%;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.menu {
+    display: flex;
+    width: 100%;
+    height: 108px;
+    gap: 60px;
+    align-items: center;
+    position: relative;
+    list-style: none;
+    justify-content: space-between;
+}
+
+.menu li a {
+    color: #fff;
+    font-family: 'League Spartan', sans-serif;
+    
+
+}
+
+.logo {
+    width: 130px;
+    position: absolute;
+    top: 20px;
+    transform: translate(-50%);
+    transition: width 1.5s, height 1.5s; /* Добавляем плавность для свойств width и height */
+}
+
+.avn a {
+    background: #3F3E79;
+    padding: 8px 19px;
+    border-radius: 6px;
+}
+/*Миссия инит глава*/
+ .ogl_missia{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 100px;  
+    color: #3F3E79; 
+    font-size: 44px;
+    font-family: 'League Spartan', sans-serif;  
+}
+
+
+    
+/*text missia init--------------------------------*/
+.ogl_text_missia  {
+    position: relative;
+    text-align: center;
+  }
+  /*текст внутри миссия инит-----------------------*/
+  .ogl_text_missia ::before,
+  .ogl_text_missia ::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    width: 17%;
+    height: 4px;
+    background-color: #3F3E79;
+  }
+  
+  .ogl_text_missia ::before {
+    left: 400px; /* Примерное положение левой линии */
+    transform: translateY(-50%);
+  }
+  
+  .ogl_text_missia ::after {
+    right: 400px; /* Примерное положение правой линии */
+    transform: translateY(-50%);
+  }
+  .ogl_2_doc{
+    margin-top: 100px;
+    font-family: poppins;
+    color: black;
+    font-weight: 600;
+    margin-left: 200px;
+    margin-bottom: 50px;
+  }
+
+ /* Стили для контейнера */
+ .container {
+    margin-left: 200px; /* Отступ слева */
+    display: flex;
+}
+
+/* Стили для кругов */
+.circle-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Выравнивание по центру */
+}
+
+.circle {
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    background-color: #3F3E79; /* Цвет круга */
+    color: white; /* Цвет текста */
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 10px; /* Отступ между кругами */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Стили для текста */
+.text-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Выравнивание по центру */
+}
+
+.text {
+    color: rgb(0, 0, 0); /* Цвет текста */
+    font-size: 24px;
+    margin-left: 20px; /* Отступ от кругов */
+padding-bottom: 20px;
+font-family:Poppins ;
+}
+.text3 {
+    color: black;
+    font-family: Poppins;
+    margin-left: 200px;
+    margin-top: 50px;
+    font-size: 20px;
+}
+
+.text3 li{
+    font-family: Poppins;
+}

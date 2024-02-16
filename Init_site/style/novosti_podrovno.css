@@ -1,26 +1,20 @@
-
 @import url('https://fonts.googleapis.com/css2?family=League+Spartan:wght@400;600&family=Poppins:wght@300&display=swap');
+
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    /* font-family: 'League Spartan', sans-serif; */
     font-family: 'Poppins', sans-serif;
 }
 
-
-body{
-   
-  margin: 0;
-  padding: 0;
-  
+body {
+    margin: 0;
+    padding: 0;
 }
-
 
 .header {
     background: #1C1A46;
     width: 100%;
-    
 }
 
 .container {
@@ -42,8 +36,6 @@ body{
 .menu li a {
     color: #fff;
     font-family: 'League Spartan', sans-serif;
-    
-
 }
 
 .logo {
@@ -51,7 +43,7 @@ body{
     position: absolute;
     top: 20px;
     transform: translate(-50%);
-    transition: width 1.5s, height 1.5s; /* Добавляем плавность для свойств width и height */
+    transition: width 1.5s, height 1.5s;
 }
 
 .avn a {
@@ -59,71 +51,181 @@ body{
     padding: 8px 19px;
     border-radius: 6px;
 }
-/*надпись новости --------------------------------------*/
+
+/* Надпись новости */
 .ogl_novosti {
     position: relative;
     width: 100%;
-  }
-  
-  .ogl_novosti h1 {
-    text-align: center;
     margin-top: 100px;
+}
+
+.ogl_novosti h1 {
+    text-align: center;
     color: #3F3E79;
     font-family: 'League Spartan', sans-serif;
-  }
-  
-  .ogl_novosti::before,
-  .ogl_novosti::after {
+}
+
+.ogl_novosti::before,
+.ogl_novosti::after {
     content: '';
     position: absolute;
     top: 50%;
     width: 60px;
     height: 4px;
     background-color: #3F3E79;
-  }
-  
-  .ogl_novosti::before {
-    left: 500px;
-    transform: translateY(-50%);
-  }
-  
-  .ogl_novosti::after {
-    right: 500px;
-    transform: translateY(-50%);
-  }
-  /*----------------------------------------------------*/
+}
 
-  .news-container{
-    margin: 100px;
-  }
+.ogl_novosti::before {
+    left: 50%;
+    transform: translateX(-50%) translateY(-50%);
+}
 
-  /* Стили для блоков новостей */
-  .news-container {
-    display: flex;
-    flex-wrap: wrap;
-  }
-  .news {
-    flex: 1 1 calc(25% - 15px); /* Четыре блока на ширину экрана с отступами */
-    margin: 0 20px 20px 0; /* Отступы между блоками */
-    cursor: pointer;
-  }
-  .news img {
-    max-width: 90%;
-    height: auto;
-  }
-  .big-news {
-    flex: 1 1 60%; /* Большой блок занимает 70% ширины контейнера */
-    margin-right: 20px; /* Отступ справа от большого блока */
-  }
-  .big-news img {
-    max-width: 100%;
-    height: auto;
-  }
-  .small-news-container {
-    flex: 1 1 10%; /* Маленькие блоки занимают 30% ширины контейнера */
-    display: flex;
-    flex-direction: column;
-  }
-  .small-news {
-    margin-bottom: 20px; /* Отступ снизу у маленьких блоков */
-  }
+.ogl_novosti::after {
+    right: 50%;
+    transform: translateX(50%) translateY(-50%);
+}
+
+/* Контейнер новостей */
+/* Контейнер новостей */
+.news-container {
+  margin: 100px; /* Отступ от краев страницы */
+  display: flex;
+  flex-wrap: wrap;
+}
+
+/* Стили для общего блока новости */
+.news {
+  flex: 1 1 calc(25% - 15px); /* Гибкость блока новости, чтобы они занимали равное пространство на странице */
+  margin: 0 20px 20px 0; /* Отступы между блоками новостей */
+  cursor: pointer; /* Курсор меняется на указатель при наведении */
+  overflow: hidden; /* Обрезание содержимого, выходящего за границы блока */
+}
+
+/* Стили для изображения внутри блока новости */
+.news img {
+  width: 100%; /* Изображение занимает всю доступную ширину блока */
+  height: auto; /* Автоматическая высота, чтобы сохранить пропорции */
+  transition: transform 0.3s ease; /* Плавный переход при изменении размера изображения */
+}
+
+.big-news img {
+  width: 100%; /* Устанавливаем изображение большой новости на всю ширину блока */
+  height: auto;
+}
+
+/* Добавим стили для желаемых размеров большого изображения */
+.big-news img.big-image {
+  width: 1000px; /* Устанавливаем желаемую ширину */
+  height: 500px; /* Устанавливаем желаемую высоту */
+}
+
+/* Увеличение изображения при наведении */
+.news:hover img {
+  transform: scale(1.1); /* Увеличение масштаба изображения при наведении на блок новости */
+}
+
+/* Стили для большого блока новости */
+.big-news {
+  flex: 1 1 calc(60% - 20px); /* Гибкость блока большой новости */
+  margin-right: 20px; /* Отступ справа */
+  height: auto; /* Автоматическая высота */
+  overflow: hidden; /* Обрезание содержимого, выходящего за границы блока */
+}
+
+.big-image {
+  width: 100%;
+  height: auto;
+}
+
+.text {
+  color: rgb(0, 0, 0); /* Цвет текста */
+  font-family: 'Poppins', sans-serif; /* Шрифт текста */
+  width: 100%; /* Ширина текстового блока */
+  height: 70px; /* Высота текстового блока */
+  display: flex; /* Отображение в виде флекс-контейнера */
+  flex-direction: column; /* Отображение текста в столбец */
+  justify-content: center; /* Выравнивание по центру по вертикали */
+  margin-top: -10px; /* Отрицательный отступ сверху */
+}
+
+.text h2, .text p {
+  margin: 0; /* Убираем отступы для заголовка и абзаца */
+}
+
+/* Стили для контейнера маленьких новостей */
+.small-news-container {
+  flex: 1 1 10%; /* Гибкость контейнера маленьких новостей */
+  display: flex; /* Отображение в виде флекс-контейнера */
+  flex-direction: column; /* Отображение в столбец */
+}
+
+/* Стили для маленьких новостей */
+.small-news {
+  margin-bottom: 20px; /* Отступ снизу */
+}
+
+.small-news img {
+  width: 100%; /* Изображение занимает всю доступную ширину блока */
+  height: auto; /* Автоматическая высота, чтобы сохранить пропорции */
+}
+
+.small-text {
+  background-color: #1C1A46; /* Цвет фона текста маленьких новостей */
+  color: white; /* Цвет текста */
+  font-family: 'Poppins', sans-serif; /* Шрифт текста */
+  width: 100%; /* Ширина текстового блока */
+  height: 70px; /* Высота текстового блока */
+  display: flex; /* Отображение в виде флекс-контейнера */
+  flex-direction: column; /* Отображение в столбец */
+  justify-content: center; /* Выравнивание по центру по вертикали */
+  font-size: 18px; /* Размер шрифта */
+}
+
+.small-text h3 {
+  margin: 0; /* Убираем отступ у заголовка */
+  font-size: 24px; /* Размер шрифта заголовка */
+}
+
+.small-text p {
+  display: none; /* Скрытый текст, который появится при клике */
+  margin: 0; /* Убираем отступы */
+}
+
+/* Показываем текст при активации */
+.small-news.active .small-text p {
+  display: block; /* Отображаем текст при активации маленькой новости */
+}
+
+/* Ваши стили */
+
+/* Убираем увеличение изображения при наведении */
+.news:hover img {
+  transform: scale(1); /* Возвращаем масштаб обратно к обычному при наведении */
+}
+
+/* Убираем верхний отступ у блока заголовка маленьких изображений */
+.small-news-container {
+  margin-top: 0; /* Удаляем верхний отступ */
+}
+
+/* Убираем фон у блока заголовка у большого изображения при увеличении */
+/* CSS код не требует изменений */
+
+/* Скрываем текст по умолчанию */
+.text p.hidden {
+  display: none;
+}
+
+/* Показываем заголовок вверху и текст внизу при нажатии */
+.small-news.active .text {
+  flex-direction: column-reverse;
+}
+/* Показываем текст при активации */
+.big-news.active .text p {
+  display: block;
+}
+
+/* Скрываем текст по умолчанию */
+.text p.hidden {
+  display: none;
+}
